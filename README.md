@@ -25,3 +25,7 @@
 * [fascinating number](https://practice.geeksforgeeks.org/problems/fascinating-number3751/1/?category[]=Arrays&category[]=Arrays&difficulty[]=-2&page=2&query=category[]Arraysdifficulty[]-2page2category[]Arrays)
 * [sum of series](https://practice.geeksforgeeks.org/problems/sum-of-series2811/1/?category[]=Arrays&category[]=Arrays&difficulty[]=-2&page=2&query=category[]Arraysdifficulty[]-2page2category[]Arrays)
 * [average in a stream](https://practice.geeksforgeeks.org/problems/average4856/1/?category[]=Arrays&category[]=Arrays&difficulty[]=-2&page=2&query=category[]Arraysdifficulty[]-2page2category[]Arrays)
+
+## Basic
+
+*
