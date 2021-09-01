@@ -1050,7 +1050,233 @@ int main() {
   // } Driver Code Ends
 ```
 
-29. []()
+29. [Sum of GP](https://practice.geeksforgeeks.org/problems/sum-of-gp2120/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
 ```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
 
+ // } Driver Code Ends
+class Solution
+{
+	public:
+		long sum_of_gp(long n,long a, long r)
+		{
+		    // Code here
+		    
+		    // a * (((r ^ n) - 1) / (r - 1))
+		    
+		    if(r == 1) return (long) (a * r * n);
+		    else if(r > 1) return (long) (a * (pow(r,n) - 1) / (r - 1));
+		    else return (long) (a * (1 - pow(r,n)) / (1 - r));
+		}
+		
+		
+};
+
+// { Driver Code Starts.
+int main(){
+    int T;
+    cin >> T;
+    while(T--)
+    {
+    	long n, a, r;
+    	cin >> n >> a >> r;
+    	Solution ob;
+    	long long int ans = ob.sum_of_gp(n, a, r);
+    	cout << ans <<"\n";
+    }
+	return 0;
+}  // } Driver Code Ends
+```
+
+30. [Simple Interest](https://practice.geeksforgeeks.org/problems/simple-interest3457/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    double simpleInterest(int P, int R, int T) {
+        // code here
+        return (double) (P * R * T) / 100;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int P, R, T;
+        cin >> P >> R >> T;
+        Solution ob;
+        cout << fixed << setprecision(2);
+        cout << ob.simpleInterest(P, R, T) << "\n";
+    }
+}
+  // } Driver Code Ends
+```
+
+31. [Compound Interest](https://practice.geeksforgeeks.org/problems/compound-interest0235/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+ // } Driver Code Ends
+class Solution {
+  public:
+    int getCompundInterest(int P, int T , int N , int R) {
+        // code here
+        int amount = (double)P * pow( (1 + ((double)R / 100) / (double)N ), (double)N * (double)T);
+
+        return amount;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int P,T,N,R;
+        
+        cin>>P>>T>>N>>R;
+
+        Solution ob;
+        cout << ob.getCompundInterest(P,T,N,R) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+32. [nPr](https://practice.geeksforgeeks.org/problems/npr4253/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution{
+public:
+    long long fact(int n){
+        if(n == 0 || n == 1) return 1;
+        else return n * fact(n - 1);
+    }
+    long long nPr(int n, int r){
+        // code here
+        return fact(n) / fact(n - r);
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n, r;
+        cin>>n>>r;
+        
+        Solution ob;
+        cout<<ob.nPr(n, r)<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+33. [Perfect Number](https://practice.geeksforgeeks.org/problems/perfect-number3759/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int isPerfect(int N) {
+        // code here
+        int num = N;
+        int sum = 0;
+        int fact,rem;
+        
+        while(num > 0){
+            fact = 1;
+            rem = num % 10;
+            for(int i = rem; i > 0; i--){ // fact of digits
+                fact = fact * i; 
+            }
+            sum += fact; // sum of fact of digits
+            num = num / 10;
+        }
+        
+        if(sum == N) return 1;
+        else return 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.isPerfect(N) << "\n";
+    }
+}
+  // } Driver Code Ends
+```
+
+34. [Automorphic Number](https://practice.geeksforgeeks.org/problems/automorphic-number4721/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+ } Driver Code Ends
+
+class Solution
+{
+	public:
+		string is_AutomorphicNumber(int n)
+		{
+		    // Code here
+		    string s1 = to_string(n); // number
+		    
+		    string s2 = to_string(n*n); // number square
+		    
+		    s2 = s2.substr(s2.size()- s1.size(), s2.size());
+		    
+		    if(s1 == s2){
+		       return "Automorphic"; 
+		    }
+		    else{
+		       return "Not Automorphic";
+		    }
+		}
+};
+
+// { Driver Code Starts.
+int main(){
+    int T;
+    cin >> T;
+    while(T--)
+    {
+    	int n;
+    	cin >> n;
+    	Solution ob;
+    	string ans = ob.is_AutomorphicNumber(n);
+    	cout << ans <<"\n";
+    }
+	return 0;
+}  // } Driver Code Ends
 ```
