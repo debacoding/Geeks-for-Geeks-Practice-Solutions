@@ -1280,3 +1280,178 @@ int main(){
 	return 0;
 }  // } Driver Code Ends
 ```
+
+35. [12 hour clock addition](https://practice.geeksforgeeks.org/problems/12-hour-clock-addition1206/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution{
+public:
+    int clockSum(int num1, int num2){
+        // code here
+        return (num1 + num2) % 12;
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int num1, num2;
+        cin>>num1>>num2;
+        
+        Solution ob;
+        cout<<ob.clockSum(num1, num2)<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+36. [Find the median](https://practice.geeksforgeeks.org/problems/find-the-median0527/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution
+{
+public:
+	public:
+		int find_median(vector<int> v)
+		{
+		    // Code here.
+		    sort(v.begin(),v.end());
+		    
+		    if(v.size() % 2 == 0){ 
+		        return (v[(v.size() / 2)] + v[(v.size() / 2) - 1]) / 2;
+		    }
+		    else{
+		        return v[(v.size() / 2)];
+		    }
+		}
+};
+
+// { Driver Code Starts.
+int main(){
+    int T;
+    cin >> T;
+    while(T--)
+    {
+    	int n; 
+    	cin >> n;
+    	vector<int> v(n);
+    	for(int i = 0; i < n; i++)
+    		cin>>v[i];
+    	Solution ob;
+    	int ans = ob.find_median(v);
+    	cout << ans <<"\n";
+    }
+	return 0;
+}
+  // } Driver Code Ends
+```
+
+37. [Check if two given circles touch each other](https://practice.geeksforgeeks.org/problems/checcheck-if-two-given-circles-touch-each-other5038/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int circleTouch(int X1, int Y1, int R1, int X2, int Y2, int R2) {
+        // code here
+        
+        // two circles touch each other if the dist between the given points is less than sum of their radii
+        
+        int dist = sqrt(pow((X2 - X1),2) + pow((Y2 - Y1),2));
+        int sumRadious = R1 + R2;
+        
+        if(dist < sumRadious) return 1;
+        else return 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int X1, Y1, R1, X2, Y2, R2;
+        cin >> X1 >> Y1 >> R1 >> X2 >> Y2 >> R2;
+        Solution ob;
+        cout << ob.circleTouch(X1, Y1, R1, X2, Y2, R2) << "\n";
+    }
+}
+  // } Driver Code Ends
+```
+
+38. [Decimal to any base conversion](https://practice.geeksforgeeks.org/problems/decimal-to-any-base-conversion2440/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical#)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+//User function Template for C++
+class Solution
+{
+public:
+
+    char reVal(int num)
+    {
+        if (num >= 0 && num <= 9) // b/w digits 0 to 9
+            return (char)(num + '0');
+        else
+            return (char)(num - 10 + 'A');
+    }
+    
+    
+    string getNumber(int B, int N)
+    {
+        
+        string result;
+        
+        while (N > 0)
+        {
+            result.push_back(reVal(N % B));
+            N /= B;
+        }
+        
+        reverse(result.begin(),result.end());
+     
+        return result;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int B,N;
+        cin>>B>>N;
+        Solution ob;
+        string ans  = ob.getNumber(B,N);
+        cout<<ans<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
