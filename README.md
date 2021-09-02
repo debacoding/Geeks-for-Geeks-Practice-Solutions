@@ -116,3 +116,8 @@
 * [Find the median](https://practice.geeksforgeeks.org/problems/find-the-median0527/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
 * [Check if two given circles touch each other](https://practice.geeksforgeeks.org/problems/checcheck-if-two-given-circles-touch-each-other5038/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical)
 * [Decimal to any base conversion](https://practice.geeksforgeeks.org/problems/decimal-to-any-base-conversion2440/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-2&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-2page1category[]Mathematical#)
+
+## Basic
+
+* [Matching Pair](https://practice.geeksforgeeks.org/problems/matching-pair5320/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+* 
