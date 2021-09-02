@@ -1455,3 +1455,28 @@ int main()
     return 0;
 }  // } Driver Code Ends
 ```
+*Alternate solution*
+```cpp
+string getNumber(int B, int N)
+    {
+        // Write Your Code here
+        string s="";
+        while(N>0)
+        {
+            int r=N%B;
+            if(r<10)
+                s=to_string(r)+s;
+            else{
+            if(r==10)s="A"+s;
+            if(r==11)s="B"+s;
+            if(r==12)s="C"+s;
+            if(r==13)s="D"+s;
+            if(r==14)s="E"+s;
+            if(r==15)s="F"+s;
+            }
+            N/=B;
+        }
+        return s;
+    }
+};
+```
