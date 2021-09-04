@@ -245,6 +245,954 @@ int main() {
 }  // } Driver Code Ends
 ```
 
+[Anshuman's Favourite Number](https://practice.geeksforgeeks.org/problems/anshumans-favourite-number2029/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+//Initial Template for C++
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+//User function Template for C++
+class Solution{   
+public:
+    string isValid(long long N){
+        // code here 
+        if(N % 5 == 0) return "YES";
+        else return "NO";
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long N;
+        cin >> N;
+        Solution ob;
+        cout << ob.isValid(N) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
+```
+
+[Half N by M](https://practice.geeksforgeeks.org/problems/geek-and-coffee-shop5721/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution{
+public:
+    int mthHalf(int N, int M){
+        // code here
+        return N / pow(2,M - 1);
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N, M;
+        cin>>N>>M;
+        
+        Solution ob;
+        cout<<ob.mthHalf(N, M)<<"\n";
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Check perfect square](https://practice.geeksforgeeks.org/problems/check-perfect-square2503/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+ { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    long long int isPerfectSquare(long long int n){
+        // code here
+        return ((int)sqrt(n) * (int)sqrt(n) == n) ? 1 : 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long int n;
+        cin >> n;
+        Solution ob;
+        cout << ob.isPerfectSquare(n) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
+```
+
+[Change all even bits in a number to 0](https://practice.geeksforgeeks.org/problems/change-all-even-bits-in-a-number-to-03253/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    long long int convertEvenBitToZero(long long int n) {
+        // code here
+        
+        /*
+        n=10;
+....10=> 00000000001010
+....0xAAAAAAAA=> 01010101011010
+n & 0xAAAAAAAA=> 00000000001010(Even bits changed (Indexing start with 0))
+        */
+         return (n & 0xAAAAAAAA);
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long int n;
+        cin >> n;
+        Solution ob;
+        cout << ob.convertEvenBitToZero(n) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
+```
+
+[Check perfect square](https://practice.geeksforgeeks.org/problems/check-perfect-square5253/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+Driver Code Ends
+class Solution{   
+public:
+    int checkPerfectSquare(int N){
+        // code here 
+        return ceil(sqrt(N)) == floor(sqrt(N));
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.checkPerfectSquare(N) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
+```
+
+[Parity of unsigned integer](https://practice.geeksforgeeks.org/problems/parity-of-unsigned-integer4247/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+/ } Driver Code Ends
+class Solution {
+  public:
+    string computeParity(int N) {
+        // code here
+        int count1 = 0;
+        
+        while(N > 0)
+        {
+            if(N%2 == 1)
+            {
+                count1++;
+            }
+            
+            N /= 2;
+        }
+        
+        return count1%2 == 0 ? "even" : "odd";
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.computeParity(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Common Divisors](https://practice.geeksforgeeks.org/problems/common-divisors4712/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    long long int commDiv(long long int a,long long int b) {
+        // code here
+        int count = 0;
+        for(int i = 1; i <= min(a,b); i++){
+            if(a % i == 0 && b % i == 0){
+                count++;
+            }
+        }
+        return count;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long int a, b;
+        cin >> a >> b;
+        Solution ob;
+        cout<<ob.commDiv(a, b)<<endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
+```
+
+[Strong Numbers](https://practice.geeksforgeeks.org/problems/strong-numbers3315/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+Driver Code Ends
+class Solution {
+  public:
+    int isStrong(int N) {
+        // code here
+        int factorial[10];
+        factorial[0] = factorial[1] = 1;
+        
+        for(int i = 2; i <= 9; i++){ // calculate factorial
+            factorial[i] = factorial[i - 1] * i;
+        }
+        
+        int num = N; // temporarily num stores original number
+        int sum = 0;
+        
+        while(num > 0){ // calculate sum of factorial of digits
+            sum += factorial[num % 10];
+            num = num / 10;
+        }
+        
+        return sum == N ? 1 : 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.isStrong(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Krishnamurthy number](https://practice.geeksforgeeks.org/problems/krishnamurthy-number1323/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    string isKrishnamurthy(int N) {
+        // code here
+        int factorial[10];
+        factorial[0] = factorial[1] = 1;
+        
+        for(int i = 2; i <= 9; i++){ // calculate factorial
+            factorial[i] = factorial[i - 1] * i;
+        }
+        
+        int num = N; // temporarily num stores original number
+        int sum = 0;
+        
+        while(num > 0){ // calculate sum of factorial of digits
+            sum += factorial[num % 10];
+            num = num / 10;
+        }
+        
+        return sum == N ? "YES" : "NO";
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.isKrishnamurthy(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Disarium Number](https://practice.geeksforgeeks.org/problems/disarium-number1045/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    int isDisarium(int N) {
+        // code here
+        int position = log10(N) + 1;
+        
+        int num = N;
+        int sum = 0;
+        while(num > 0)
+        {
+            sum += pow((num%10), position);
+            position--;
+            num /= 10;
+        }
+        
+        return sum == N ? 1 : 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.isDisarium(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Strong Numbers](https://practice.geeksforgeeks.org/problems/strong-numbers4336/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+Driver Code Ends
+class Solution
+{
+public:
+	public:
+		int is_StrongNumber(int n)
+		{
+		    // Code here.
+		int factorial[10];
+        factorial[0] = factorial[1] = 1;
+        
+        for(int i = 2; i <= 9; i++){ // calculate factorial
+            factorial[i] = factorial[i - 1] * i;
+        }
+        
+        int num = n; // temporarily num stores original number
+        int sum = 0;
+        
+        while(num > 0){ // calculate sum of factorial of digits
+            sum += factorial[num % 10];
+            num = num / 10;
+        }
+        
+        return sum == n ? 1 : 0;
+		}
+};
+
+
+// { Driver Code Starts.
+int main(){
+    int T;
+    cin >> T;
+    while(T--)
+    {
+    	int n; 
+    	cin >> n;
+    	Solution ob;
+    	int ans = ob.is_StrongNumber(n);
+    	cout << ans <<"\n";
+    }
+	return 0;
+}
+  // } Driver Code Ends
+```
+
+[Base Conversion](https://practice.geeksforgeeks.org/problems/base-conversion0924/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical)
+```cpp
+/ } Driver Code Ends
+class Solution{
+public:
+    
+    string Decimal_To_Binary(int a){
+        string ans="";
+        while(a)
+        {
+            ans.push_back('0'+(a%2));
+            a/=2;
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+    
+   string Binary_To_Decimal(int b){
+        
+         int nums=0;
+         int cnt=0;
+        while(b)
+        {
+           nums+=(b%10)*pow(2,cnt);
+           b/=10;
+           cnt++;
+        }
+        return to_string(nums);
+       
+       
+    }
+    
+    string Decimal_To_Hexadecimal(int c)
+    {
+        string ans;
+        while(c)
+        {
+            int rem=c%16;
+            if(rem<10)
+            {
+                ans.push_back('0'+rem);
+            }
+            else
+              ans.push_back('A'+(rem-10));
+              c/=16;
+        }
+        reverse(ans.begin(),ans.end());
+        return ans;
+    }
+    
+    string Hexadecimal_To_Decimal(string d)
+    {
+        int ans=0;
+        int cnt=0;
+        for(int i=d.size()-1;i>=0;i--)
+        {
+            if(d[i]>='A'&&d[i]<='F')
+            {
+                ans+=(d[i]-'A'+10)*pow(16,cnt);
+                
+            }
+            else
+            {
+                ans+=(d[i]-'0')*pow(16,cnt);
+            }
+            cnt++;
+        }
+        return to_string(ans);
+        
+    }
+    vector<string> convert(int a,int b,int c,string d)
+    {
+        // code here
+        vector<string>ans;
+       ans.push_back( Decimal_To_Binary(a));
+        ans.push_back(Binary_To_Decimal(b));
+       ans.push_back( Decimal_To_Hexadecimal(c));
+        ans.push_back(Hexadecimal_To_Decimal(d));
+        return ans;
+        
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b,c;
+        string d;
+        cin>>a>>b>>c>>d;
+        
+        Solution ob;
+        vector<string> ans = ob.convert(a,b,c,d);
+        
+        for(int i = 0;i<ans.size();i++)
+        {
+            cout<<ans[i]<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0; 
+}  // } Driver Code Ends
+```
+
+[Student record](https://practice.geeksforgeeks.org/problems/student-record1752/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    string studentRecord(vector<vector<string>> S, int N) {
+        // code here
+        vector<string>v;
+        int mx=-1;
+        for(int i=0;i<N;i++){
+            int avg=(stoi(S[i][1])+stoi(S[i][2])+stoi(S[i][3]))/3;
+            if(avg>mx){
+                v.clear();
+                v.push_back(S[i][0]);
+                mx=avg;
+            }
+            else if(avg == mx)
+                v.push_back(S[i][0]);
+        }
+        string s;
+        for(int i=0;i<v.size();i++){
+            s+=v[i];
+            s+=" ";
+        }
+        s+=to_string(mx);
+        return s;
+        
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin>>N;
+
+        string a,b,c,d;
+        
+        vector<vector<string>> S(N);
+        
+        for(int i=0; i<N; i++)
+        {
+            cin>>a>>b>>c>>d;
+            S[i].push_back(a);
+            S[i].push_back(b);
+            S[i].push_back(c);
+            S[i].push_back(d);
+        }
+        
+        Solution ob;
+        cout << ob.studentRecord(S,N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Human and the tower](https://practice.geeksforgeeks.org/problems/human-and-the-tower5254/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical#)
+```cpp
+Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int findHeightOrDistance(char type, double value, double angle) {
+        // code here
+        if(type == 'd'){
+            return floor((double)(value * tan(angle * 3.14 / 180.0)));
+        }  
+        else if(type == 'h'){
+            return floor((double)(value / tan(angle * 3.14 / 180.0)));
+        }
+    }
+};
+
+
+// { Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        char ch;
+        double a, b;
+        cin >> ch >> a >> b;
+        Solution ob;
+        cout << ob.findHeightOrDistance(ch, a, b) << "\n";
+    }
+}  // } Driver Code Ends
+```
+
+[The Remaining Cake](https://practice.geeksforgeeks.org/problems/the-remaining-cake1349/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical#)
+```cpp
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    double remainingCircle(double R, int N, int M) {
+        // code here
+        return (6.28*R*(M-N))/M;
+    }
+};
+
+// { Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    cout << fixed << setprecision(2);
+    while (t--) {
+        int N, M;
+        double R;
+        cin >> R >> N >> M;
+        Solution ob;
+        cout << ob.remainingCircle(R, N, M) << "\n";
+    }
+}  // } Driver Code Ends
+```
+
+[Count the numbers satisfying (m + sum(m) + sum(sum(m))) equals to N](https://practice.geeksforgeeks.org/problems/count-the-numbers-satisfying-m-summ-sumsumm-equals-to-n2537/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical#)
+```cpp
+ode Ends
+// User function Template for C++
+
+class Solution{
+public:
+    int sum(int temp){
+        int sum = 0;
+        while(temp > 0)
+        {
+           int rem = temp % 10;
+           sum += rem;
+           temp /= 10;
+        }
+    return sum;
+    }
+    
+    int countOfNumbers(int n) {
+        // code here
+        int count = 0;
+        for(int i = n - 97; i <= n; i++){
+          if(i + sum(i) + sum(sum(i)) == n){
+            count++;
+          }
+        }
+        return count;
+        
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N;
+        cin>>N;
+        Solution ob;
+        cout<<ob.countOfNumbers(N)<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Minimum sum of factors](https://practice.geeksforgeeks.org/problems/minimum-sum-of-factors5829/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical#)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int isPrime(int N) {
+        for (int i = 2; i * i <= N; i++) {
+            if (N % i == 0) return 0;
+        }
+        return 1;
+    }
+    int sumOfFactors(int N) {
+        int ans = 0;
+        if (isPrime(N)) {
+            ans++ ;
+        }
+        for (int i = 2; i * i <= N; i++) {
+            while (N % i == 0) {
+                ans += i;
+                N /= i;
+            }
+        }
+        if (N > 2) ans += N;
+        return ans;
+    }
+};
+
+// { Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        int ans = ob.sumOfFactors(N);
+        cout << ans << "\n";
+    }
+}  // } Driver Code Ends
+```
+
+[Convert floating point to natural number](https://practice.geeksforgeeks.org/problems/convert-floating-point-to-natural-number3049/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical)
+```cpp
+// { Driver Code Starts
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+class Solution{
+	public:
+	int findMinMultiple(string N){
+	    // Code here
+	    // Find size of string representing a
+        	// floating point number.
+        	int n = N.length();
+        
+        	// Below is used to find denominator in
+        	// fraction form.
+        	int count_after_dot = 0;
+        
+        	// Used to find value of count_after_dot
+        	bool dot_seen = false;
+        
+        	// To find numerator in fraction form of
+        	// given number. For example, for 30.25,
+        	// numerator would be 3025.
+        	int num = 0;
+        	for (int i = 0; i < n; i++)
+        	{
+        		if (N[i] != '.')
+        		{
+        			num = num*10 + (N[i] - '0');
+        			if (dot_seen == true)
+        				count_after_dot++;
+        		}
+        		else
+        			dot_seen = true;
+        	}
+        
+        	// If there was no dot, then number
+        	// is already a natural.
+        	if (dot_seen == false)
+        	return 1;
+        
+        	// Find denominator in fraction form. For example,
+        	// for 30.25, denominator is 100
+        	int dem = (int)pow(10, count_after_dot);
+        
+        	// Result is denominator divided by
+        	// GCD-of-numerator-and-denominator. For example, for
+        	// 30.25, result is 100 / GCD(3025,100) = 100/25 = 4
+        	return (dem / __gcd(num, dem));
+	    
+	}
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		string N;
+		cin >> N;
+		Solution ob;
+		int ans = ob.findMinMultiple(N);
+		cout << ans << "\n";
+	}
+	return 0;
+}  // } Driver Code Ends
+```
+
+[Cricket Average](https://practice.geeksforgeeks.org/problems/cricket-average2031/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical)
+```cpp
+er Code Ends
+
+
+class Solution{
+	public:
+	int Average(vector<int>run, vector<string>status){
+	    // Code here
+	    int sum = 0;
+        int out = 0;
+        
+        for(int i = 0; i < run.size(); i++)
+        {
+            sum += run[i];
+            
+            if(status[i] == "out")
+            {
+                out++;
+            }
+        }
+        
+        if(out == 0)
+        {
+            return -1;
+        }
+        
+        return ceil(sum / (double) out);
+	}
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		vector<int>run(n);
+		vector<string>status(n);
+		for(int i = 0; i < n; i++){
+			cin >> run[i] >> status[i];
+		}
+		Solution ob;
+		int ans = ob.Average(run, status);
+		cout << ans << "\n";
+	}
+	return 0;
+}  // } Driver Code Ends
+```
+
+[The Cycle Game](https://practice.geeksforgeeks.org/problems/the-cycle-game4441/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical#)
+```cpp
+Ends
+
+
+class Solution{
+	public:
+   	int find_division(int x, int y, int n){
+   	    // Code here.
+   	    if(n % 2 == 0){
+   	        return max(x,y) / min(x,y);
+   	    }
+   	    else{
+   	        x = x * 2;
+   	        return max(x,y) / min(x,y);
+   	    }
+   	}    
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int x, y, n;
+		cin >> x>> y >> n;
+		Solution ob;
+		int ans = ob.find_division(x, y, n);
+		cout << ans <<"\n";
+	}  
+	return 0;
+}  // } Driver Code Ends
+```
+
+[Long Long Decimal](https://practice.geeksforgeeks.org/problems/long-long-decimal4552/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=9&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page9category[]Mathematical)
+```cpp
+// { Driver Code Starts
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+
+class Solution{
+	public:
+   	string upto_K_places(int k){
+   	    // Code here
+   	    int a = 355, b = 113;
+   		string res = "";
+   		for(int i = 0; i <= k; i++){
+   			res += char((a/b) + '0');
+   			if(i == 0 and k > 0)
+   				res += '.';
+   			a = (a%b)*10;
+   		}
+   		return res;
+   	}    
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int k;
+		cin >> k;
+		Solution ob;
+		string ans = ob.upto_K_places(k);
+		cout << ans <<"\n";
+	}  
+	return 0;
+}  // } Driver Code Ends
+```
+
 []()
 ```cpp
 
