@@ -1193,6 +1193,411 @@ int main(){
 }  // } Driver Code Ends
 ```
 
+[Gray Code](https://practice.geeksforgeeks.org/problems/gray-code4907/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+de Ends
+class Solution {
+  public:
+    int getGray(int n) {
+        // code here
+        return n ^ (n >> 1);
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        
+        cin>>n;
+
+        Solution ob;
+        cout << ob.getGray(n) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Divide the number](https://practice.geeksforgeeks.org/problems/divide-the-number5320/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+public:
+    int countWays(int N){ 
+        // code here
+        int counter = 0;
+        
+        for(int i = 1; i < N; i++){
+            for(int j = i; j < N; j++){
+                for(int k = j; k < N; k++){
+                    for(int l = k; l < N; l++){
+                        if(i + j + k + l == N){
+                            counter++;
+                        }
+                    }
+                }
+            }
+        }
+        return counter;
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.countWays(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
+```
+
+[Number of Integer solutions](https://practice.geeksforgeeks.org/problems/number-of-integer-solutions2458/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+Code Ends
+
+class Solution {
+  public:
+    long long noOfIntSols(long long N) {
+        // code here
+        return ((N + 1) * (N + 2)) / 2;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.noOfIntSols(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Factorial](https://practice.geeksforgeeks.org/problems/factorial5739/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+Ends
+class Solution{
+public:
+    long long int factorial(int N){
+        //code here
+        if(N == 0 || N == 1) return 1;
+        else return N * factorial(N - 1);
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.factorial(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
+```
+
+[Difference series](https://practice.geeksforgeeks.org/problems/difference-series4345/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+ode Ends
+class Solution
+{
+public:
+    int differenceSeries(int N)
+    {
+        // Write Your Code here
+        return (N * (2 * N + 1));
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin >> N;
+
+        Solution ob;
+        int ans = ob.differenceSeries(N);
+        cout << ans << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Check if the number is Fibonacci](https://practice.geeksforgeeks.org/problems/check-if-the-number-is-fibonacci4654/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+ode Ends
+class Solution{   
+public:
+    string checkFibonacci(int N){
+        // code here 
+        int n1 = N * N * 5 + 4;
+        int n2 = N * N * 5 - 4;
+        int n3 = sqrt(n1);
+        int n4 = sqrt(n2);
+        
+        if(n3 * n3 == n1 || n4 * n4 == n2) return "Yes";
+        else return "No";
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.checkFibonacci(N) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
+```
+
+[Sum of Digits Divisibility](https://practice.geeksforgeeks.org/problems/sum-of-digits-divisibility5311/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+} Driver Code Ends
+// User function template for C++
+
+class Solution {
+  public:
+    int isDivisible(int N) {
+        // code here
+        int num = N;
+        int sum = 0;
+        while(num > 0){
+           sum += (num % 10);
+           num /= 10;
+        }
+        if(N % sum == 0) return 1;
+        else return 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.isDivisible(N) << "\n";
+    }
+}  // } Driver Code Ends
+```
+
+[One's Complement](https://practice.geeksforgeeks.org/problems/ones-complement5928/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+ Driver Code Ends
+class Solution{
+public:
+    int onesComplement(int N){
+        //code here
+        
+        // Find number of bits in the given integer 
+        int number_of_bits = floor(log2(N))+1; 
+        
+        // XOR the given integer with poe(2,  
+        // number_of_bits-1 and print the result  
+        return ((1 << number_of_bits) - 1) ^ N;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        
+        Solution ob;
+        cout<<ob.onesComplement(n)<<"\n";
+    }
+}  // } Driver Code Ends
+```
+
+[Extended Euclidean Algorithm](https://practice.geeksforgeeks.org/problems/extended-euclidean-algorithm3848/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+
+
+
+#include<bits/stdc++.h> 
+using namespace std;
+
+ // } Driver Code Ends
+
+
+class Solution{
+int extendedEuclideanAlgorithm(int a, int b, int &x, int &y)
+    {
+        if(b == 0)
+        {
+            x = 1;
+            y = 0;
+            
+            return a;
+        }
+        
+        int x1, y1;
+        int g = extendedEuclideanAlgorithm(b, a % b, x1, y1);
+        
+        x = y1;
+        y = x1 - (a / b) * y1;
+        
+        return g;
+        
+    }
+    
+    public:
+    vector<int> gcd(int a, int b)
+    {
+        int x, y, g;
+        
+        g = extendedEuclideanAlgorithm(a, b, x, y);
+        
+        return {g, x, y};
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int a,b;
+        cin>>a>>b;
+        Solution ob;
+        vector<int> v = ob.gcd(a,b);
+        if(v.size()!=3)
+            return 0;
+        cout<<v[0]<<" "<<v[1]<<" "<<v[2]<<"\n";
+    }
+    return 0; 
+}  // } Driver Code Ends
+```
+
+[Middle of Three](https://practice.geeksforgeeks.org/problems/middle-of-three2926/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+ Driver Code Ends
+//User function template for C++
+
+class Solution{
+  public:
+    int middle(int A, int B, int C){
+        //code here//Position this line where user code will be pasted
+        if(A > B){
+            if(B > C) return B; // A > B > C
+            else if(A > C) return C; // A > C > B
+            else return A; // C > A > B
+        }
+        else{
+           if(A > C) return A; // B > A > C
+           else if(B > C) return C; // B > C > A
+           else return B; // C > B > A
+        } 
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int A,B,C;
+        cin>>A>>B>>C;
+        Solution ob;
+        cout<<ob.middle(A,B,C) <<"\n";
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Smallest divisible number](https://practice.geeksforgeeks.org/problems/smallest-divisible-number/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+//User function template for C++
+
+class Solution{
+public:
+    long long GCD(long long int a,long long int b){
+        if(b == 0) return a;
+        else return GCD(b,a % b);
+    }
+    
+    long long LCM(long long int a,long long int b){
+        return (a * b) / GCD(a,b);
+    }
+    
+    long long getSmallestDivNum(long long n){
+        // code here
+        long result = 1;
+        for(long i = 2; i <= n; i++){
+            result = LCM(result,i);
+        }
+        return result;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n;
+        cin>>n;
+        Solution ob;
+        cout<< ob.getSmallestDivNum(n)<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
 []()
 ```cpp
 
