@@ -1598,7 +1598,199 @@ int main() {
 }  // } Driver Code Ends
 ```
 
-[]()
+[Repeated sum of digits](https://practice.geeksforgeeks.org/problems/repeated-sum-of-digits3955/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+ Driver Code Ends
+class Solution{   
+public:
+    
+    int repeatedSumOfDigits(int N){
+        // code here 
+        
+        if(N < 10) return N;
+        
+        int sum = 0;
+        while(N > 0){
+            sum += (N % 10);
+            N /= 10;
+        }
+        return repeatedSumOfDigits(sum);
+    }
+};
 
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.repeatedSumOfDigits(N) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
+```
+
+[Sieve of Eratosthenes](https://practice.geeksforgeeks.org/problems/sieve-of-eratosthenes5242/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
+
+ // } Driver Code Ends
+//User function Template for C++
+class Solution
+{
+public:
+    vector<int> sieveOfEratosthenes(int N)
+    {
+        // Write Your Code here
+        bool prime[N+1]={0};
+        for(int i=2;i*i<=N;i++){
+            if(prime[i]==0){
+                for(int j=i*i;j<=N;j+=i){
+                    prime[j]=1;
+                }
+            }
+        }
+        vector<int>v;
+        for(int i=2;i<=N;i++){
+            if(prime[i]==0)
+                v.push_back(i);
+        }
+        return v;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        vector<int> primes  = ob.sieveOfEratosthenes(N);
+        for(auto prime : primes) {
+            cout<< prime <<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Carol Number](https://practice.geeksforgeeks.org/problems/carol-number4645/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    int nthCarol(int N) {
+        // code here
+        if(N == 1) return 1;
+        else  return pow(4,N) - pow(2,(N + 1)) - 1;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.nthCarol(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Add two fractions](https://practice.geeksforgeeks.org/problems/add-two-fractions/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+
+void addFraction(int num1, int den1, int num2,
+                 int den2);
+
+int main()
+{
+    int T;
+    cin>>T;
+    while(T--)
+    {
+        int a,b,c,d,resultNum,resultDen;
+        cin>>a>>b>>c>>d;
+        addFraction(a,b,c,d);
+
+    }
+}
+// } Driver Code Ends
+
+
+/*You are required to complete this function*/
+void addFraction(int num1, int den1, int num2,int den2)
+{
+//Your code here
+  int gcd;
+  int num = num1 * den2 + num2 * den1;
+  int den = den1 * den2;
+  
+  for(int i = 1; i <= num && i <= den; i++){
+      if(num % i == 0 && den % i == 0) gcd = i;
+  }
+  
+  cout << num / gcd << "/" << den / gcd << endl;
+ }
+```
+
+[Count numbers divisible by M](https://practice.geeksforgeeks.org/problems/count-numbers-divisible-by-m1524/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    int countDivisibles(int A, int B, int M) {
+        // code here
+        int count = 0;
+        for(int i = A; i <= B; i++){
+            if(i % M == 0) count++;
+        }
+        return count;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int A, B, M;
+        cin >> A >> B >> M;
+        Solution ob;
+        cout<<ob.countDivisibles(A, B, M)<<endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
 ```
