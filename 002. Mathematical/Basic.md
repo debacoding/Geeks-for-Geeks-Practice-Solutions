@@ -1794,3 +1794,237 @@ int main() {
 }
   // } Driver Code Ends
 ```
+
+[Distance and Displacement](https://practice.geeksforgeeks.org/problems/distance-and-displacement4145/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=solved&difficulty[]=-1&page=2&query=category[]MathematicalproblemStatussolveddifficulty[]-1page2category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution{
+public:
+    int distance(int n, int a[], char d[]){
+        // code here
+        int c = 0;
+        int b = 0;
+        int sum = 0;
+        
+        for(int i = 0; i < n; i++){
+            if(d[i] == 'E') c += a[i];
+            if(d[i] == 'W') c -= a[i];
+            if(d[i] == 'N') b += a[i];
+            if(d[i] == 'S') b -= a[i];
+            sum += a[i];
+        }
+        int m = c * c + b * b;
+        return ceil(sqrt(m) + sum); // sqrt(m) = displacement and sum is distance
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        int a[n];
+        char d[n];
+        for(int i = 0;i < n;i++)
+            cin>>a[i];
+        for(int i = 0;i < n;i++)
+            cin>>d[i];
+            
+        Solution ob;
+        cout<<ob.distance(n, a, d)<<"\n";
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[LCM And GCD](https://practice.geeksforgeeks.org/problems/lcm-and-gcd4516/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+
+using namespace std;
+
+ // } Driver Code Ends
+class Solution {
+  public:
+  
+    long long gcd(long long x,long long y){return !y?x:gcd(y,x%y);}
+    
+    vector<long long> lcmAndGcd(long long A , long long B) {
+        // code here
+        long long GCD = gcd(A,B);
+        vector<long long> ans;
+        ans.push_back((A*B)/GCD);
+        ans.push_back(GCD);
+        return ans;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long A,B;
+        
+        cin>>A>>B;
+
+        Solution ob;
+        vector<long long> ans = ob.lcmAndGcd(A,B);
+        cout<<ans[0]<<" "<<ans[1]<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+
+
