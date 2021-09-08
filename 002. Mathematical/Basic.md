@@ -1886,74 +1886,647 @@ int main() {
 }  // } Driver Code Ends
 ```
 
-[]()
+[Reading books](https://practice.geeksforgeeks.org/problems/reading-books3803/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+//Initial Template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+//User function Template for C++
+
+class Solution{
+public:
+    long long maxPoint(int N, int K, long long A[], long long B[])
+    {
+        // code here
+        long long result = 0;
+        for(int i = 0; i < N; i++){
+            result = max(result,((K / A[i]) * B[i]));
+        }
+        return result;
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N, K;
+        cin>>N>>K;
+        long long A[N], B[N];
+        for(int i = 0;i < N;i++)
+            cin>>A[i];
+        for(int i = 0;i < N;i++)
+            cin>>B[i];
+        
+        Solution ob;
+        cout<<ob.maxPoint(N, K, A, B)<<"\n";
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Find The Sequence](https://practice.geeksforgeeks.org/problems/find-the-sequence1346/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
 
+ // } Driver Code Ends
+class Solution
+{
+public:
+    vector<long long> printSeries(int n)
+    {
+        // Write your code here
+        vector<long long> v;
+        long long a = 1;
+        long long b = 2;
+        long long c = 5;
+        
+        if(n == 1){
+            v.push_back(a);
+            return v;
+        }
+        
+        else if(n == 2){
+            v.push_back(a);
+            v.push_back(b);
+            return v;
+        }
+        
+        else if(n == 3){
+            v.push_back(a);
+            v.push_back(b);
+            v.push_back(c);
+            return v;
+        }
+        
+        
+           v.push_back(a);
+           v.push_back(b);
+           v.push_back(c); 
+           
+           for(long long i = 4; i <= n; i++){
+               long long d = a + b + c;
+               v.push_back(d);
+               long long temp = a;
+               a = b;
+               b = c;
+               c = d;
+           }
+           return v;
+        
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin >> N;
+        
+        Solution ob;
+        vector<long long> a = ob.printSeries(N);
+        
+        for(long long i=0;i<N;i++){
+            cout<<a[i]<<" ";
+        }
+        cout<<endl;
+        
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Sum of divisors](https://practice.geeksforgeeks.org/problems/sum-of-divisors3601/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
 ```cpp
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
 
+ // } Driver Code Ends
+// User function Template for C++
+typedef long long int lli;
+class Solution {
+  public:
+    long long int divSum(long long int n){
+        // code here
+        lli sum = 0;
+        for(lli i = 1; i < n; i++){
+            if(n % i == 0){
+                sum += i;
+            }
+        }
+        return sum;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long int n;
+        cin >> n;
+        Solution ob;
+        cout<<ob.divSum(n)<<endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
 ```
 
-[]()
+[GCD of Array](https://practice.geeksforgeeks.org/problems/gcd-of-array0614/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
 
+ // } Driver Code Ends
+class Solution
+{
+	public:
+	
+	int GCD(int a, int b){
+	    if(a == 0) return b;
+	    else return GCD(b % a,a);
+	}
+	
+    int gcd(int N, int arr[])
+    {
+    	// Your code goes here
+    	if(N == 1) return arr[0];
+    	
+    	int ans = GCD(arr[0],arr[1]);
+    	for(int i = 2; i < N; i++) ans = GCD(ans,arr[i]);
+    	
+    	return ans;
+    }
+};
+
+
+// { Driver Code Starts.
+
+int main() 
+{
+   
+   
+   	int t;
+    cin >> t;
+    while (t--)
+    {
+        int N;
+        cin >> N;
+
+        int arr[N];
+        for(int i = 0; i < N; i++)
+        	cin >> arr[i];
+        Solution ob;
+       	cout <<  ob.gcd(N, arr) << "\n";
+   
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Repetitive Addition Of Digits](https://practice.geeksforgeeks.org/problems/repetitive-addition-of-digits2221/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
 
+ // } Driver Code Ends
+//User function Template for C++
+typedef long long ll;
+class Solution
+{
+public:
+    int singleDigit(long long N)
+    {
+        // Write Your Code here
+        ll sum = 0;
+        
+        while(N > 0 || sum > 9){
+            if(N == 0){
+                N = sum;
+                sum = 0;
+            }
+            
+            sum += (N % 10);
+            N /= 10;
+        }
+        return sum;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+{
+    int t;
+    cin >> t;
+    while (t--)
+    {
+        long long N;
+        cin>>N;
+        Solution ob;
+        int ans  = ob.singleDigit(N);
+        cout<<ans<<endl;
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Difference between sums of odd and even digits](https://practice.geeksforgeeks.org/problems/difference-between-sums-of-odd-and-even-digits2837/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+// Initial Template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int oddAndEven(string S) {
+        // code here
+        int even = 0, odd = 0;
+        
+        for(int i = 0; i < S.size(); i++){
+            if(i % 2 == 0) even += S[i] - '0';
+            else odd += S[i] - '0';
+        }
+        
+        return (even == odd) ? 1 : 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string S;
+        cin >> S;
+        Solution ob;
+        cout << ob.oddAndEven(S) << "\n";
+    }
+}  // } Driver Code Ends
 ```
 
-[]()
+[Count numbers containing 4](https://practice.geeksforgeeks.org/problems/count-numbers-containing-43022/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
 
+ // } Driver Code Ends
+class Solution {
+  public:
+    int countNumberswith4(int N) {
+        // code here
+        int count = 0;
+        for(int i = 1; i <= N; i++){
+            count += has4(i) ? 1 : 0;
+        }
+        return count;     
+    }
+    
+    bool has4(int x){
+        while(x != 0){
+            if(x % 10 == 4) return true;
+            x = x / 10;
+        }
+        return false;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.countNumberswith4(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Find the fine](https://practice.geeksforgeeks.org/problems/find-the-fine4353/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
 
+
+
+ // } Driver Code Ends
+
+typedef long long int lli;
+class Solution{
+  public:
+    long long int totalFine(int n, int date, int car[], int fine[])
+    {
+        lli sum1 = 0, sum2 = 0;
+        
+        for(lli i = 0; i < n; i++){
+            
+                if(car[i] % 2 != 0) sum1 += fine[i];
+                else sum2 += fine[i];
+        }
+        
+        if(date % 2 == 0) return sum1;
+        else return sum2;
+        
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, i, date;
+        cin >> n >> date;
+        int car[n], fine[n];
+        
+        for (i = 0; i < n; i++){
+            cin >> car[i];
+        }
+        for (int i = 0; i < n; i++) {
+            cin >> fine[i];
+        }
+        Solution obj;
+        cout << obj.totalFine(n, date, car, fine) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
 ```
 
-[]()
+[Check if divisible by 11](https://practice.geeksforgeeks.org/problems/check-if-divisible-by-114724/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
 
+
+ // } Driver Code Ends
+//User function template for C++
+class Solution{
+public:	
+	
+	int divisibleBy11 (string S)
+	{
+	    // Your Code Here
+	    int even = 0, odd = 0;
+        
+        for(int i = 0; i < S.size(); i++){
+            if(i % 2 == 0) odd += S[i] - '0';
+            else even += S[i] - '0';
+        }
+        
+        return abs(odd - even) % 11 == 0 ? 1 : 0;
+	}
+};
+
+// { Driver Code Starts.
+
+int main()
+{
+	int t; cin >> t;
+	while (t--)
+	{
+		string s; cin >> s;
+		Solution ob;
+		cout << ob.divisibleBy11 (s) << endl;
+	}
+}
+
+// Contributed By: Pranay Bansal
+  // } Driver Code Ends
 ```
 
-[]()
+[Point lies or not](https://practice.geeksforgeeks.org/problems/point-lies-or-not0417/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
 ```cpp
+// { Driver Code Starts
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+class Solution {
+  public:
+    float area(int x1, int y1, int x2, int y2, int x3, int y3)
+    {
+        return abs((x1*(y2-y3)+x2*(y3-y1)+x3*(y1-y2))/2.0);
+    }
+    
+    string isInsideTri(int x1, int y1, int x2, int y2, int x3, int y3, int x, int y) {
+        // code here
+        float A=area(x1,y1,x2,y2,x3,y3);
+        float A1=area(x,y,x2,y2,x3,y3);
+        float A2=area(x1,y1,x,y,x3,y3);
+        float A3=area(x1,y1,x2,y2,x,y);
+        if(A==A1+A2+A3)
+           return "Yes";
+        return "No";
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int x1,y1,x2,y2,x3,y3,x,y;
+        
+        cin>>x1>>y1>>x2>>y2>>x3>>y3;
+        cin>>x>>y;
+
+        Solution ob;
+        cout << ob.isInsideTri(x1,y1,x2,y2,x3,y3,x,y) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Square Divisors](https://practice.geeksforgeeks.org/problems/square-divisors4319/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=7&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page7category[]Mathematical)
 ```cpp
+// { Driver Code Starts
+// Initial Template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution{
+public:
+    int squareFactor(long long N){
+        // code here
+        int count=0;
+        
+        for(int i=1;i <= sqrt(N);i++) {
+            if(N%(i*i) == 0)
+            count++;
+        }
+        return count;
+    }
+};
+
+// { Driver Code Starts.
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        long long N;
+        cin>>N;
+        
+        Solution ob;
+        cout<<ob.squareFactor(N)<<"\n";
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Product is even or odd?](https://practice.geeksforgeeks.org/problems/product-is-even-or-odd3020/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=6&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page6category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+#include <iostream>
+using namespace std;
 
+int EvenOdd(string n1 , string n2);
+
+// driver code
+int main()
+{
+   int t;
+   cin>>t;
+   for(int i=0;i<t;i++)
+   {
+       string n1;
+       cin>>n1;
+       string n2;
+       cin>>n2;
+       cout<<EvenOdd(n1 , n2)<<endl;
+   }
+    return 0;
+}
+// } Driver Code Ends
+
+
+int EvenOdd(string n1 , string n2)
+{
+    //code here.
+    return (n1[n1.length() - 1] * n2[n2.length() - 1]) % 2 == 0 ? 1 : 0;
+}
 ```
 
-[]()
+[Product of factors of number](https://practice.geeksforgeeks.org/problems/product-of-factors-of-number4757/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=5&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page5category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+// Initial Template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function template for C++
+#define M 1000000007
+typedef long long ll;
+class Solution {
+  public:
+    int factorProduct(int n) {
+        // code here
+        ll prod = 1;
+        for (int i = 1; i * i <= n; i++)
+        {
+        if (n % i == 0)
+        {
+            // If factors are equal,
+            // multiply only once
+            if (n / i == i)
+                prod = (prod * i) % M;
+ 
+            // Otherwise multiply both
+            else {
+                prod = (prod * i) % M;
+                prod = (prod * n / i) % M;
+            }
+        }
+    }
+    return prod;
+    }
+};
+
+// { Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.factorProduct(N) << "\n";
+    }
+}  // } Driver Code Ends
 ```
 
-[]()
+[Sum of fifth powers of the first n natural numbers](https://practice.geeksforgeeks.org/problems/sum-of-fifth-powers-of-the-first-n-natural-numbers3415/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=5&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page5category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+// Initial template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function template for C++
+
+class Solution {
+  public:
+    long long sumOfFifthPowers(long long n) {
+        // code here
+        return ((2 * n * n * n * n * n * n) +
+           (6 * n * n * n * n * n) +
+           (5 * n * n * n * n) -
+           (n * n)) / 12;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.sumOfFifthPowers(N) << "\n";
+    }
+}  // } Driver Code Ends
 ```
 
 []()
