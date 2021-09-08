@@ -2529,52 +2529,445 @@ int main() {
 }  // } Driver Code Ends
 ```
 
-[]()
+[Check if given four points form a square](https://practice.geeksforgeeks.org/problems/check-if-given-four-points-form-a-square3026/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=4&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page4category[]Mathematical)
 ```cpp
+// { Driver Code Starts
+// Initial Template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int getDistance(vector<int> A, vector<int> B){
+        return ((B[0] - A[0]) * (B[0] - A[0])) +
+               ((B[1] - A[1]) * (B[1] - A[1]));
+    }
+    
+    int fourPointSquare(vector<vector<int>> points) {
+        // code here
+        unordered_map<int,int> distances;
+        
+        int d1 = getDistance(points[0], points[1]);
+        int d2 = getDistance(points[1], points[2]);
+        int d3 = getDistance(points[2], points[3]);
+        int d4 = getDistance(points[3], points[0]);
+        int d5 = getDistance(points[0], points[2]);
+        int d6 = getDistance(points[1], points[3]);
+        
+        distances[d1]++;
+        distances[d2]++;
+        distances[d3]++;
+        distances[d4]++;
+        distances[d5]++;
+        distances[d6]++;
+        
+        bool sides = false;
+        bool diagonals = false;
+        for(auto it : distances){
+            if(it.second == 4) sides = true;
+            if(it.second == 2) diagonals = true;
+        }
+        
+        return (sides and diagonals);
+    }
+};
+
+// { Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        vector<vector<int>> points(4, vector<int>(2));
+        for (int i = 0; i < 4; i++)
+            for (int j = 0; j < 2; j++) cin >> points[i][j];
+        Solution ob;
+        cout << ob.fourPointSquare(points) << "\n";
+    }
+}  // } Driver Code Ends
 ```
 
-[]()
+[Find sum of even factors of a number](https://practice.geeksforgeeks.org/problems/find-sum-of-even-factors-of-a-number1725/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=4&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page4category[]Mathematical)
 ```cpp
+// { Driver Code Starts
 
+#include<bits/stdc++.h> 
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+public:
+    int evenFactors(int n){
+        // code here
+        
+        
+        // If n is odd, then there are no even factors.
+        if (n % 2 != 0) return 0;
+  
+       // Traversing through all prime factors.
+       int res = 1;
+       for (int i = 2; i <= sqrt(n); i++) {
+  
+        // While i divides n, print i and divide n
+        int count = 0, curr_sum = 1, curr_term = 1;
+        while (n % i == 0) {
+            count++;
+  
+            n = n / i;
+  
+            // here we remove the 2^0 that is 1.  All
+            // other factors
+            if (i == 2 && count == 1)
+                curr_sum = 0;
+  
+            curr_term *= i;
+            curr_sum += curr_term;
+        }
+  
+        res *= curr_sum;
+    }
+  
+    // This condition is to handle the case when n
+    // is a prime number.
+    if (n >= 2)
+        res *= (1 + n);
+  
+    return res;
+    }
+};
+
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.evenFactors(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
 ```
 
-[]()
+[Find the remainder](https://practice.geeksforgeeks.org/problems/find-the-remainder1439/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=4&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page4category[]Mathematical#)
 ```cpp
+er Code Ends
+class Solution {
+  public:
+    int findRemainder(string N) {
+        // code here
+        int rem = 0;
+        for(int i = 0; i < N.size(); i++){
+            rem = 10 * rem + N[i]-'0';
+            rem %=7;
+        }
+        return rem;
+    }
+};
 
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.findRemainder(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Multiples Power](https://practice.geeksforgeeks.org/problems/multiples-power2816/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=4&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page4category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
 
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+class Solution
+{
+	public:
+	    // Function to find sum of AP series
+long long sumAP(long long n, long long d)
+{
+    // n * ( a + l ) / 2 
+    
+    // Number of terms
+    n /= d;
+ 
+    return (n) * (1 + n) * d / 2;
+}
+
+long long int sum(long long n)
+		{
+		    // Code here
+		    
+		    /*
+We know that multiples of 3 form an AP as S3 = 3 + 6 + 9 + 12 + 15 + 18 + 21 + …
+And the multiples of 7 form an AP as S7 = 7 + 14 + 21 + 28 + …
+Now, Sum = S3 + S7 i.e. 3 + 6 + 7 + 9 + 12 + 14 + 15 + 18 + 21 + 21 + …
+So, the final result will be S3 + S7 – S21		    
+		    */
+	// Since, we need the sum of
+    // multiples less than N
+    n--;
+ 
+    return sumAP(n, 3) + sumAP(n, 7) - sumAP(n, 21);    
+		    
+		    
+		}
+};
+
+// { Driver Code Starts.
+int main(){
+    int T;
+    cin >> T;
+    while(T--)
+    {
+    	int n;
+    	cin >> n;
+    	Solution ob;
+    	long long int  ans = ob.sum(n);
+    	cout << ans <<"\n";
+    }
+	return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[Numbers containing 0's from 1 to N](https://practice.geeksforgeeks.org/problems/numbers-containing-0s-from-1-to-n4704/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=4&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page4category[]Mathematical)
 ```cpp
+// { Driver Code Starts
 
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+class Solution{
+	public:
+	
+	int has0(int x){
+	   while(x){
+	       if(x % 10 == 0) return 1;
+	       x = x / 10;
+	   } 
+	   return 0;
+	}
+	
+	int CountNo(int N)
+	{
+		// Code here
+		
+		int count = 0;
+		
+		for(int i = 1; i <= N; i++) count += has0(i);
+		
+		return count;
+	}
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		Solution ob;
+		int ans = ob.CountNo(n);
+		cout << ans <<"\n";
+	}
+	return 0;
+}  // } Driver Code Ends
 ```
 
-[]()
+[An Easy problem](https://practice.geeksforgeeks.org/problems/an-easy-problem0811/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=3&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page3category[]Mathematical#)
 ```cpp
+// { Driver Code Starts
+// Initial template for C++
 
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function template for C++
+
+class Solution {
+  public:
+    int easyProblem(int K, int L, int R, int X, int Y) {
+        // code here
+        if(L>R || X>Y) return 0;
+        Y++;
+        for(int i=X;i<Y;i++){
+          if(L<=(K*i) && (K*i)<=R) return 1;
+        }
+        return 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int K, L, R, X, Y;
+        cin >> K >> L >> R >> X >> Y;
+        Solution ob;
+        cout << ob.easyProblem(K, L, R, X, Y) << "\n";
+    }
+}  // } Driver Code Ends
 ```
 
-[]()
+[Check if a number is power of another number](https://practice.geeksforgeeks.org/problems/check-if-a-number-is-power-of-another-number5442/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=3&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page3category[]Mathematical#)
 ```cpp
+r Code Ends
+class Solution{   
+public:
+    int isPowerOfAnother(long long x, long long y){
+        // code here 
+        int a = log(y) / log(x);
+        double b = log(y) / log(x);
+        
+        return(a == b);
+        
+    }
+};
 
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long int X, Y;
+        cin >> X >> Y;
+        Solution ob;
+        cout << ob.isPowerOfAnother(X,Y) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
 ```
 
-[]()
+[Area of a triangle](https://practice.geeksforgeeks.org/problems/area-of-a-triangle5739/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=3&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page3category[]Mathematical)
 ```cpp
+nds
+//User function template for C++
 
+class Solution{
+    public:
+    double findArea(double a,double b,double c){
+        //code here
+        
+    // Length of sides must be positive
+    // and sum of any two sides
+    // must be smaller than third side.
+    if (a < 0 || b < 0 || c < 0 ||
+       (a + b <= c) || a + c <= b ||
+                       b + c <= a)
+       return 0;
+       
+    float s = (a + b + c) / 2;
+    return sqrt(s * (s - a) *
+                    (s - b) * (s - c));
+    }
+};
+
+// { Driver Code Starts.
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int A,B,C;
+        cin>>A>>B>>C;
+        Solution ob;
+        cout<<fixed<<setprecision(3);
+        cout<<ob.findArea(A,B,C)<<"\n";
+    }
+}  // } Driver Code Ends
 ```
 
-[]()
+[Check if divisible by 36](https://practice.geeksforgeeks.org/problems/check-if-divisible-by-363149/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=2&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page2category[]Mathematical)
 ```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std; 
 
+ // } Driver Code Ends
+class Solution{   
+public:
+    int checkDivisible36(string num){
+        // code here
+        
+    int n = num.length();
+ 
+    // null number cannot
+    // be divisible by 36
+    if (n == 0)
+        return 0;
+ 
+    // single digit number other than
+    // 0 is not divisible by 36
+    if (n == 1 && num[0] != '0')
+        return 0;
+ 
+    // number formed by the last 2 digits
+    int two_digit_num = (num[n-2] - '0')*10 +
+                        (num[n-1] - '0') ;
+ 
+    // if number is not divisible by 4
+    if (two_digit_num%4 != 0)
+        return 0;
+ 
+    // number is divisible by 4 calculate
+    // sum of digits
+    int sum = 0;
+    for (int i=0; i<n; i++)
+        sum += (num[i] - '0');
+ 
+    // sum of digits is not divisible by 9
+    if (sum%9 != 0)
+        return 0;
+ 
+    // number is divisible by 4 and 9
+    // hence, number is divisible by 36
+    return 1;
+        
+    }
+};
+
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string S;
+        cin >> S;
+        Solution ob;
+        cout << ob.checkDivisible36(S) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
 ```
 
-[]()
+[Find all factorial numbers less than or equal to N](https://practice.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=2&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page2category[]Mathematical)
 ```cpp
 
 ```
