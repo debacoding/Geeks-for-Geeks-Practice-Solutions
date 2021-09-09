@@ -2296,6 +2296,10 @@ public:
 	int divisibleBy11 (string S)
 	{
 	    // Your Code Here
+	    
+	    /*
+	     for a number to be divible by 11, the difference between the sum of digits at odd positions and the sum of digits at even positions should be divisible by 11
+	    */
 	    int even = 0, odd = 0;
         
         for(int i = 0; i < S.size(); i++){
@@ -3402,9 +3406,32 @@ int32_t main()
   // } Driver Code Ends
 ```
 
-[]()
+[Check if divisible by 5](https://practice.geeksforgeeks.org/problems/check-if-divisible-by-52730/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
 ```cpp
+ } Driver Code Ends
+class Solution{   
+public:
+    int divisibleBy5(string N){
+        // code here 
+        
+         return (N[N.size() - 1] == '0' or N[N.size() - 1] == '5') ? 1 : 0;
+    }
+};
 
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string N;
+        cin >> N;
+        Solution ob;
+        cout << ob.divisibleBy5(N) << endl;
+    }
+    return 0; 
+}   // } Driver Code Ends
 ```
 
 []()
