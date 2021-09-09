@@ -2972,6 +2972,451 @@ int main()
 
 ```
 
+[Multiply 2 matrices](https://practice.geeksforgeeks.org/problems/multiply-2-matrices4144/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+
+#include<bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+
+class Solution {
+public:
+    void Mutliply(vector<vector<int> >& matrixA, vector<vector<int>>&matrixB) {
+        // Code here
+        int n = matrixA.size();
+        
+        vector<vector<int>> matrixC(n,vector<int> (n,0));
+        
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < n; j++){
+                matrixC[i][j] = 0;
+                
+                for(int k = 0; k < n; k++){
+                    matrixC[i][j] += matrixA[i][k] * matrixB[k][j];
+                }
+            }
+        }
+        matrixA = matrixC;
+    }
+};
+
+// { Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		vector<vector<int>> matrixA(n, vector<int>(n,0));
+		vector<vector<int>> matrixB(n, vector<int>(n,0));
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < n; j++){
+				cin >> matrixA[i][j];
+			}
+		}
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < n; j++){
+				cin >> matrixB[i][j];
+			}
+		}
+		Solution ob;
+		ob.Mutliply(matrixA, matrixB);
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < n; j++)
+				cout << matrixA[i][j] <<" ";
+			cout << "\n";
+		}
+	}
+	return 0;
+}  // } Driver Code Ends
+```
+
+[Print first n Fibonacci Numbers](https://practice.geeksforgeeks.org/problems/print-first-n-fibonacci-numbers1002/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+//Initial function template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+//User function template for C++
+
+
+class Solution
+{
+    public:
+    //Function to return list containing first n fibonacci numbers.
+    vector<long long> printFibb(int n) 
+    {
+        //code here
+        vector<long long> fib(n,0);
+        fib[0] = 1; // first num
+        fib[1] = 1; // second num
+        
+        for(int i = 2; i < n; i++) fib[i] = fib[i - 1] + fib[i - 2];
+        
+        return fib;
+    }
+};
+
+// { Driver Code Starts.
+int main()
+ {
+     //taking total testcases
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        //taking number of elements
+        int n;
+        cin>>n;
+        Solution obj;
+        //calling function printFibb()
+        vector<long long> ans = obj.printFibb(n);
+        
+        //printing the elements of vector
+        for(long long i:ans)cout<<i<<' ';
+        cout<<endl;
+    }
+	return 0;
+}
+  // } Driver Code Ends
+```
+
+[Count Squares](https://practice.geeksforgeeks.org/problems/count-squares3649/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+class Solution {
+  public:
+    int countSquares(int N) {
+        // code here
+        int count = 0;
+        
+        for(int i = 1; i * i < N; i++) count++;
+        
+        return count;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N;
+        
+        cin>>N;
+
+        Solution ob;
+        cout << ob.countSquares(N) << endl;
+    }
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Factorial Number](https://practice.geeksforgeeks.org/problems/factorial-number2446/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+public:
+    int isFactorial(int N){
+        //code here
+        int sum = 1;
+        int n = log2(N);
+        
+        if(N == 0 || N == 1 || N == 2) return 1;
+        
+        for(int i = 2; i <= N; i++){
+            if(sum == N) return 1;
+            else if(sum > N) return 0;
+            sum = sum * i;
+        }
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout << ob.isFactorial(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
+```
+
+
+[Union of two arrays](https://practice.geeksforgeeks.org/problems/union-of-two-arrays3538/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+//Initial template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+//User function template in C++
+
+class Solution{
+    public:
+    //Function to return the count of number of elements in union of two arrays.
+    int doUnion(int a[], int n, int b[], int m)  {
+        //code here
+        
+        //Lets only store the unique elements in both the arrays in the map
+        //map just reduces our solution to TC of O(n+m)
+    
+        unordered_map<int, int> map;
+        for(int i=0;i<n;i++){
+            map[a[i]]++;
+        }
+        for(int i=0;i<m;i++){
+            map[b[i]]++;
+        }
+        int ans = 0;
+        
+        //We will traverse through the map as map stores only the unique elements
+        //in both the arrays.
+        
+        //And save the no of elements in the array
+        
+        for(auto i : map){
+            ans++;
+        }
+        
+        return ans;
+    }
+};
+
+// { Driver Code Starts.
+
+int main() {
+	
+	int t;
+	cin >> t;
+	
+	while(t--){
+	    
+	    int n, m;
+	    cin >> n >> m;
+	    int a[n], b[m];
+	   
+	    for(int i = 0;i<n;i++)
+	       cin >> a[i];
+	       
+	    for(int i = 0;i<m;i++)
+	       cin >> b[i];
+	    Solution ob;
+	    cout << ob.doUnion(a, n, b, m) << endl;
+	    
+	}
+	
+	return 0;
+}  // } Driver Code Ends
+```
+
+[Ishaan's Sum Problem](https://practice.geeksforgeeks.org/problems/ishaans-sum-problem0934/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+// Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+ // } Driver Code Ends
+// User function Template for C++
+class Solution {
+  public:
+    long long int kthDistinct(long long int A, long long int B) {
+        // code here
+        
+        long long int C = A / B;
+        
+        if(C >= (B / 2)) return 1;
+        else return 0;
+    }
+};
+
+// { Driver Code Starts.
+int main() {
+    long long int t;
+    cin >> t;
+    while (t--) {
+        long long int A, B;
+        cin >> A >> B;
+        // string s;
+        // cin>>s;
+        Solution ob;
+        cout << ob.kthDistinct(A, B) << endl;
+    }
+    return 0;
+}
+  // } Driver Code Ends
+```
+
+[Substrings with similar first and last characters](https://practice.geeksforgeeks.org/problems/substrings-with-similar-first-and-last-characters3644/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+ 
+#include <bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+//User function template for C++
+class Solution{
+public:	
+
+	int countSubstringWithEqualEnds(string s)
+	{
+	    // Your code goes here
+	    int count = s.length();
+	    vector<int> v(26);
+	    
+	    for(int i = 0; i < s.length(); i++) v[s[i] - 'a']++;
+	    
+	    for(int i = 0; i < 26; i++) count += ((v[i] * (v[i] - 1)) / 2);
+	    
+	    return count;
+	}
+};
+
+// { Driver Code Starts.
+
+int main() 
+{
+   	
+
+   	ios_base::sync_with_stdio(0);
+    cin.tie(NULL);
+    cout.tie(NULL);
+   
+   	int t;
+   	cin >> t;
+   	while(t--)
+   	{
+   		string str;
+   		cin >> str;
+
+   	    Solution ob;
+
+   		cout << ob.countSubstringWithEqualEnds(str) << "\n";
+   	}
+
+    return 0;
+}  // } Driver Code Ends
+```
+
+[Celsius to Fahrenheit Conversion](https://practice.geeksforgeeks.org/problems/celsius-to-fahrenheit-conversion5212/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical#)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h> 
+using namespace std;
+
+ // } Driver Code Ends
+class Solution{
+public:
+    double celciusToFahrenheit(int C){
+        //code here
+        
+        // C / 5 = (F - 32) / 9
+        double F = (1.8 * C) + 32;
+        return F;
+    }
+};
+
+// { Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin>>N;
+        Solution ob;
+        cout <<setprecision(2)<<fixed<< ob.celciusToFahrenheit(N) << endl;
+    }
+    return 0; 
+}  // } Driver Code Ends
+```
+
+[Check if divisible by 4](https://practice.geeksforgeeks.org/problems/check-if-divisible-by-43813/1/?category[]=Mathematical&category[]=Mathematical&problemStatus=unsolved&difficulty[]=-1&page=1&query=category[]MathematicalproblemStatusunsolveddifficulty[]-1page1category[]Mathematical)
+```cpp
+// { Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+
+ // } Driver Code Ends
+//User function template for C++
+class Solution{
+public:	
+	
+	int divisibleBy4 (string N)
+	{
+	    // Your Code Here
+	    
+	    /*
+	    A number is divisible by 4 if the number formed by the last 2 digits is divisible by 4.
+        Note: Take of the case when there's just one digit in the number
+	    */
+	    
+	    int ones_digit = N[N.size() - 1];
+	    int tens_digit = N[N.size() - 2];
+	    int num = tens_digit * 10 + ones_digit;
+	    
+	    return num % 4 == 0 ? 1 : 0;
+	}
+};
+
+// { Driver Code Starts.
+
+int32_t main()
+{
+	int t; cin >> t;
+	while (t--)
+	{
+		string s; cin >> s;
+		Solution ob;
+		cout << ob.divisibleBy4 (s) << endl;
+	}
+}
+
+// Contributed By: Pranay Bansal
+  // } Driver Code Ends
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
 []()
 ```cpp
 
@@ -2991,6 +3436,137 @@ int main()
 ```cpp
 
 ```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
+[]()
+```cpp
+
+```
+
 
 
 
